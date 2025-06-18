@@ -1,0 +1,32 @@
+spring:
+  ai:
+    openai:
+      api-key: {YOUR_API_KEY}
+      chat:
+        options:
+          model: gpt-4o-mini
+          temperature: 0.2
+
+    vectorstore:
+      pgvector:
+      index-type: HNSW
+      distance-type: COSINE_DISTANCE
+      dimensions: 1536
+      max-document-batch-size: 10000 # Optional: Maximum number of documents per batch
+
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 1GB
+#  main:
+#    banner-mode: off
+#    web-application-type: none
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ragdb
+    username: user
+    password: 12345
+
+#logging:
+#  pattern:
+#    console:
