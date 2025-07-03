@@ -61,7 +61,7 @@ public class AiController {
     public String chatMemory(@PathVariable String chatId, @RequestParam String text, Model model) {
         chatMemory.add(chatId, new UserMessage(text));
         String reply = chatClient.prompt()
-                .messages(chatMemory.get(chatId, 5))
+                .messages(chatMemory.get(chatId))
                 .call()
                 .content();
         model.addAttribute("memoryResponse", reply);

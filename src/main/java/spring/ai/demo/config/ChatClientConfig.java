@@ -1,8 +1,6 @@
 package spring.ai.demo.config;
 
 import org.springframework.ai.chat.client.ChatClient;
-import org.springframework.ai.chat.memory.ChatMemory;
-import org.springframework.ai.chat.memory.InMemoryChatMemory;
 import org.springframework.ai.tool.ToolCallbackProvider;
 import org.springframework.ai.tool.method.MethodToolCallbackProvider;
 import org.springframework.ai.transformer.splitter.TokenTextSplitter;
@@ -17,11 +15,6 @@ public class ChatClientConfig {
     ChatClient chatClient(ChatClient.Builder builder) {
         return builder
                 .build();
-    }
-
-    @Bean
-    ChatMemory chatMemory() {
-        return new InMemoryChatMemory();
     }
 
 

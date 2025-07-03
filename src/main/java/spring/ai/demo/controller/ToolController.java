@@ -18,7 +18,7 @@ public class ToolController {
     public String aiSearch(@RequestParam String text) {
 
         return chatClient.prompt()
-                .tools(tool)
+                .toolCallbacks(tool)
                 .user(text)
                 .call()
                 .content();
